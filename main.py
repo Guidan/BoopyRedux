@@ -3,7 +3,7 @@ from modules import meme
 
 l = os.listdir('modules')
 modules = [x.split('.')[0] for x in l if x.endswith('.py')]
-logging.basicConfig(format='%(levelname)s:%(message)s', level=logging.INFO)
+logging.basicConfig(format='%(asctime)s:%(levelname)s:%(name)s"%(message)s', level=logging.INFO)
 client = discord.Client()
 
 
@@ -20,7 +20,9 @@ async def on_message(message):
     content = message.content.split()
     if message.content.startswith(config.activator):
         command = content[0].lstrip(config.activator)
-        if command in modules:
+        if command == "help":
+            await message.channel.send("I am Boopy. To perform a command, type ! followed by one of these commands:\n{}\n to get help on a command, type !command help".format(modules))
+        elif command in modules:
             invoke = ('{}.main(message,content)'.format(command))
             if len(content) > 1:
                 if content[1] == "help":
