@@ -1,6 +1,9 @@
-import discord, config, logging, os
-from modules import meme, boop
+import config
+import discord
+import logging
+import os
 
+from modules import meme
 
 l = os.listdir('modules')
 modules = [x.split('.')[0] for x in l if x.endswith('.py')]

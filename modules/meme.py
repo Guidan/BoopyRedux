@@ -1,14 +1,14 @@
 import json
 import logging
+import config
 
 
 async def main(message, content):
-    if message.content.startswith('!'):
+    if message.content.startswith(config.activator):
         await message.channel.send("Meme doesn't work like that. For more info, do !meme help")
         return
     with open('.\\asset\meme.json') as memes:
         meme_data = json.load(memes)
-
     for meme in meme_data:
         if meme in content:
             logging.info('meme word found: {}'.format(meme))
