@@ -3,7 +3,7 @@ import discord
 import logging
 import os
 
-from modules import meme
+from modules import meme,boop,birthday,affix
 
 l = os.listdir('modules')
 modules = [x.split('.')[0] for x in l if x.endswith('.py')]
