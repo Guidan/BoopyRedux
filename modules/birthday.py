@@ -35,7 +35,7 @@ async def main(message, content):
                 args = args[3:-1]
             else:
                 await message.channel.send("Hello! To use the birthday function, use either of these syntaxes"
-                                           "\n'!birthday @User' to check that Users birthday (if it exists in DB"
+                                           "\n'!birthday @User' to check that Users birthday (if it exists in DB)"
                                            "\n'!birthday MM/DD' to save your birthday to the DB")
                 return
 
@@ -79,5 +79,5 @@ async def main(message, content):
 
 async def help(message):
     await message.channel.send("Hello! To use the birthday function, use either of these syntaxes"
-                               "\n'!birthday @User' to check that Users birthday (if it exists in DB"
+                               "\n'!birthday @User' to check that Users birthday (if it exists in DB)"
                                "\n'!birthday $DATE' to save your birthday to the DB")
