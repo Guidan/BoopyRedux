@@ -9,6 +9,7 @@ async def main(message, content):
         return
     with open('.\\asset\meme.json') as memes:
         meme_data = json.load(memes)
+        content = [each_string.lower() for each_string in content]
     for meme in meme_data:
         if meme in content:
             logging.info('meme word found: {}'.format(meme))
