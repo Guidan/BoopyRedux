@@ -6,5 +6,6 @@ async def main(message,content):
     affixes = res.json()['title']
     await message.channel.send('The mythic plus affixes for this week are: {}'.format(affixes))
 
+
 async def help(message):
     await message.channel.send('Use !affix to find out what the mythic plus affixes are for the week!')

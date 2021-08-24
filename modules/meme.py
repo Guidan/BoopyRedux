@@ -10,10 +10,12 @@ async def main(message, content):
     with open('.\\asset\meme.json') as memes:
         meme_data = json.load(memes)
         content = [each_string.lower() for each_string in content]
+    content = " ".join(content)
     for meme in meme_data:
         if meme in content:
             logging.info('meme word found: {}'.format(meme))
             await message.channel.send(meme_data[meme])
+            return
 
 
 async def help(message):

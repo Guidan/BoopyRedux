@@ -3,11 +3,11 @@ import discord
 import logging
 import os
 from discord.ext import tasks, commands
-from modules import meme, boop, birthday, affix
+from modules import meme, boop, birthday, affix, join, leave, w2g
 
 l = os.listdir('modules')
 modules = [x.split('.')[0] for x in l if x.endswith('.py')]
-logging.basicConfig(format='%(asctime)s:%(levelname)s:"%(message)s', level=logging.INFO)
+logging.basicConfig(format='%(asctime)s:%(levelname)s: %(message)s', level=logging.INFO)
 client = discord.Client()
 
 
