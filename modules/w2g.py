@@ -1,5 +1,4 @@
 import logging
-
 import requests
 from config import w2g_api_key
 
@@ -20,6 +19,7 @@ async def main(message, content):
         "Accept": "application/json",
         "Content-Type": "application/json"
     }
+    await message.delete()
     res = requests.post("https://w2g.tv/rooms/create.json", params=data_input, headers=headers_input)
     w2g_link = "https://w2g.tv/rooms/{}".format(res.json()["streamkey"])
     logging.info("sending link for {}".format(w2g_link))
