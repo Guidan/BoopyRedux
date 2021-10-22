@@ -14,7 +14,7 @@ async def main(message, content):
     else:
         role_id = channel_roles.get(content[1])
         logging.info("checking guild roles...")
-        role = get(message.guild.roles, id=int(role_id))
+        role = get(message.guild.roles, id=role_id)
         if role in user_roles:
             logging.warning("user already in role. Scolding...")
             await message.channel.send("You are already in that role. To leave, type !leave {}".format(content[1]))

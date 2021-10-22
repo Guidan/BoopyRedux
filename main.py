@@ -3,7 +3,7 @@ import discord
 import logging
 import os
 from discord.ext import tasks, commands
-from modules import meme, boop, birthday, affix, join, leave, w2g, price
+from modules import meme, boop, birthday, affix, join, leave, w2g, price, accept
 
 l = os.listdir('modules')
 modules = [x.split('.')[0] for x in l if x.endswith('.py')]
