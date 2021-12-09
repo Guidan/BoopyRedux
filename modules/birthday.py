@@ -21,6 +21,7 @@ def is_date(string, fuzzy=False):
 
 
 async def main(message, content):
+
     if len(content) < 2:
         args = message.author.id
         datename = False
@@ -34,7 +35,7 @@ async def main(message, content):
         else:
             datename = False
             if args.startswith("<@"):
-                args = args[3:-1]
+                args = args.strip()[3:-1]
             else:
                 await message.channel.send("Hello! To use the birthday function, use either of these syntaxes"
                                            "\n'!birthday @User' to check that Users birthday (if it exists in DB)"
