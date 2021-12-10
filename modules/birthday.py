@@ -43,7 +43,7 @@ async def main(message, content):
                 return
 
     try:
-        bday = sqlite3.connect('.\\asset\\birthdays.db')
+        bday = sqlite3.connect('./asset/birthdays.db')
         cur = bday.cursor()
     except:
         logging.critical('CONNECTION ERROR WITH BIRTHDAY DATABASE')
@@ -92,7 +92,7 @@ async def help(message):
 async def birthday_check(client):
     logging.info("Checking birthdays...")
     try:
-        bday = sqlite3.connect('.\\asset\\birthdays.db')
+        bday = sqlite3.connect('./asset/birthdays.db')
         cur = bday.cursor()
     except:
         logging.critical('CONNECTION ERROR WITH BIRTHDAY DATABASE')
