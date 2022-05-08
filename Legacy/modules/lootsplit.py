@@ -1,5 +1,4 @@
-import logging
-from modules import lootadd
+from Legacy.modules import lootadd
 
 
 async def main(message, content):
@@ -20,7 +19,7 @@ async def main(message, content):
             "Copper": 1
         }
         output = {}
-        copperAdd = lootadd.platinum*1000 + lootadd.gold*100 + lootadd.silver*10 + lootadd.copper  # convert all to copper for easy math
+        copperAdd = lootadd.platinum * 1000 + lootadd.gold * 100 + lootadd.silver * 10 + lootadd.copper  # convert all to copper for easy math
         leftover = copperAdd % splitNum  # get the remainder to output later
         copperAdd -= leftover  # remove the remainder from the loot pile for easy math
         copperShare = int(copperAdd/splitNum)

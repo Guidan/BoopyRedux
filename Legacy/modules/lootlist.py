@@ -1,5 +1,4 @@
-import logging
-from modules import lootadd
+from Legacy.modules import lootadd
 
 
 async def main(message, content):
